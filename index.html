@@ -128,14 +128,6 @@
       margin-top: 20px;
     }
 
-    #searchFont {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #314946;
-      border-radius: 6px;
-    }
-
     /* Toggle Switch */
 .toggle-wrap {
   display: flex;
@@ -223,18 +215,6 @@
   <!-- Input -->
   <input type="text" id="userText" placeholder="Type your text here">
 
-  <!-- Search -->
-  <input type="text" id="searchFont" placeholder="Search fonts...">
-
-  <!-- Toggle -->
-  <div class="toggle-wrap">
-    <label class="toggle">
-      <input type="checkbox" id="showFavoritesOnly">
-      <span class="slider"></span>
-    </label>
-    <span class="toggle-label">Show Favorites</span>
-  </div>
-
   <!-- Fonts -->
   <div id="allFontsPreview"></div>
 
@@ -313,41 +293,27 @@ const fonts = [
 ];
 
 function updatePreviews() {
-  const text = document.getElementById("userText").value || "Your preview text";
-  const search = document.getElementById("searchFont").value.toLowerCase();
+  const text =
+    document.getElementById("userText").value || "Your preview text";
 
   const container = document.getElementById("allFontsPreview");
   container.innerHTML = "";
 
   let filtered = [...fonts];
 
-  if (search) {
-    filtered = filtered.filter(f => f.name.toLowerCase().includes(search));
-  }
-
-  if (showOnlyFavs) {
-    filtered = filtered.filter(f => favorites.includes(f.name));
-  }
-
-  filtered.sort((a, b) =>
-    favorites.includes(b.name) - favorites.includes(a.name)
+ if (search) {
+  filtered = filtered.filter(f =>
+    f.name.toLowerCase().includes(search)
   );
+}
 
   filtered.forEach(f => {
     const block = document.createElement("div");
     block.classList.add("font-block");
 
     block.innerHTML = `
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <div style="font-family:'${f.class}'; font-size:20px;">
-          ${f.name}
-        </div>
-        <div>
-          <button onclick="copyFont('${f.name}', this)">Copy</button>
-          <button onclick="toggleFavorite('${f.name}')">
-            ${isFav ? "⭐" : "☆"}
-          </button>
-        </div>
+      <div style="font-family:'${f.class}'; font-size:20px; margin-bottom:10px;">
+        ${f.name}
       </div>
 
       <div style="font-family:'${f.class}'; font-size:32px;">
@@ -359,10 +325,11 @@ function updatePreviews() {
   });
 }
 
-// Events
-document.getElementById("userText").addEventListener("input", updatePreviews);
-document.getElementById("searchFont").addEventListener("input", updatePreviews);
-// Init
+document
+  .getElementById("userText")
+  .addEventListener("input", updatePreviews);
+
+
 updatePreviews();
 </script>
 
