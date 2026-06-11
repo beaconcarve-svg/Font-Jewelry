@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Font Preview Tool</title>
+
+  <style>
+    /* === FONT DEFINITIONS === */
+    /* Replace the URLs with your actual GitHub raw links */
+    @font-face {
+      font-family: 'AcademyEngraved';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Academy_Engraved_LET_Fonts.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'AlegreyaSC';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/AlegreyaSC-Medium.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Atma';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Atma-Regular.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'AutumninNovember';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Autumn_in_November.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'Bodoni72SC';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Bodoni_72_Smallcaps_Book.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Butterfly';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Butterfly.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'ButterflyKids';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/ButterflyKids-Regular.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'CreamCheese';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Cream_Cheese.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'DancingScript';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/DancingScript-Medium.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Daughter Sunflower';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Daughter_Sunflower.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'Electrolize';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Electrolize-Regular.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Elizabeth';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Elizabeth Script.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Geneva';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Geneva.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Gorditas';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Gorditas-Regular.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Grandma';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Grandma.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'Grinched';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/GrinchedRegular.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'Handmade';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Handmade.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'ImperialScript';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/ImperialScript-Regular.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Jersey';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Jersey.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'JTCandyTree';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/JT_CandyTree.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'LibreBaskerville';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/LibreBaskerville-Regular.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'LifeSavers';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/LifeSavers-Bold.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Lucky';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Lucky.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'Magnolina';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Magnolina.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'MinimalistFarmhouse';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Minimalist_Farmhouse_Regular.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'LoveCurly';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Monogram_Love_Curly.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'NewYork';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/NewYork.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'SamanthaCalligraphy';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Samantha_Calligraphy.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'SamanthaSignature';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Samantha_Signature.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'Samantha';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Samantha.otf') format('opentype');
+    }
+@font-face {
+      font-family: 'SFCompactRounded';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/SFCompactRounded.ttf') format('truetype');
+    }
+@font-face {
+      font-family: 'Stencil Army';
+      src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/Stencil_army_Regular.ttf') format('truetype');
+    }
+    /* === STYLING === */
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      color: #ffffff;
+      border-radius: 6px;
+      background-color: #30625C;
+    }
+
+    input, select {
+      font-size: 18px;
+      padding: 10px;
+      margin: 20px auto;
+      display: block;
+      width: 80%;
+      border: 1px solid #314946;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    #dropdownBtn {
+      width: 100%;
+      padding: 12px;
+      background: #ffffff;
+      border: 1px solid #314946;
+      text-align: left;
+      cursor: pointer;
+      color: #000000;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #ffffff;
+      border: 1px solid #30625C;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 10;
+      color: #000000;
+    }
+
+    .dropdown-content div {
+      padding: 10px;
+      cursor: pointer;
+    }
+    button {
+  transition: 0.2s ease;
+}
+    .dropdown-content div:hover {
+      background: #eee;
+    }
+
+    .preview {
+      font-size: 32px;
+      margin: 15px 0;
+    }
+
+    .font-block {
+      margin: 20px 0;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #fontName {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .single-input-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 20px auto;
+      flex-wrap: wrap;
+    }
+
+    .single-input-row .dropdown {
+      width: 45%;
+    }
+
+    .filter-label {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #searchFont {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #314946;
+      border-radius: 6px;
+    }
+
+    /* Toggle Switch */
+.toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.toggle {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 26px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggle input:checked + .slider {
+  background-color: #30625C;
+}
+
+.toggle input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.toggle-label {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+
+    .instructions {
+  margin-bottom: 20px;
+}
+
+.instructions h2 {
+  margin-bottom: 8px;
+  font-size: 26px;
+  color: #30625C;
+}
+
+.instructions p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Instructions -->
+  <div class="instructions">
+    <h2>Choose Your Font</h2>
+    <p>
+      Type your text below to preview it in different fonts.<br>
+      Click ⭐ to save favorites, and press <b>Copy</b> to use the font name in your order.
+    </p>
+  </div>
+
+  <!-- Input -->
+  <input type="text" id="userText" placeholder="Type your text here">
+
+  <!-- Search -->
+  <input type="text" id="searchFont" placeholder="Search fonts...">
+
+  <!-- Toggle -->
+  <div class="toggle-wrap">
+    <label class="toggle">
+      <input type="checkbox" id="showFavoritesOnly">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label">Show Favorites</span>
+  </div>
+
+  <!-- Fonts -->
+  <div id="allFontsPreview"></div>
+
+</div>
+
+<style>
+/* Instructions */
+.instructions {
+  margin-bottom: 20px;
+}
+.instructions h2 {
+  margin-bottom: 8px;
+  font-size: 26px;
+  color: #30625C;
+}
+.instructions p {
+  font-size: 16px;
+  color: #444;
+}
+
+/* Toggle */
+.toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.toggle {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+.toggle input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 26px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  transition: 0.3s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.toggle input:checked + .slider {
+  background-color: #30625C;
+}
+.toggle input:checked + .slider:before {
+  transform: translateX(24px);
+}
+.toggle-label {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+/* Buttons smooth */
+button {
+  transition: 0.2s ease;
+}
+</style>
+
+<script>
+const fonts = [
+  { name: "Academy Engraved", class: "AcademyEngraved" },
+  { name: "Alegreya SC", class: "AlegreyaSC" },
+  { name: "Atma", class: "Atma" },
+  { name: "Autumn in November", class: "AutumninNovember" },
+  { name: "Bodoni SC", class: "Bodoni72SC" },
+  { name: "Butterfly", class: "Butterfly" },
+  { name: "ButterflyKids", class: "ButterflyKids" },
+  { name: "Cream Cheese", class: "CreamCheese" },
+  { name: "Dancing Script", class: "DancingScript" },
+  { name: "Daughter Sunflower", class: "Daughter Sunflower" },
+  { name: "Electrolize", class: "Electrolize" },
+  { name: "Elizabeth", class: "Elizabeth" },
+  { name: "Geneva", class: "Geneva" },
+  { name: "Gorditas", class: "Gorditas" },
+  { name: "Grandma", class: "Grandma" },
+  { name: "Grinched", class: "Grinched" },
+  { name: "Handmade", class: "Handmade" },
+  { name: "Imperial Script", class: "ImperialScript" },
+  { name: "Jersey", class: "Jersey" },
+  { name: "CandyTree", class: "JTCandyTree" },
+  { name: "LibreBaskerville", class: "LibreBaskerville" },
+  { name: "LifeSavers", class: "LifeSavers" },
+  { name: "Lucky", class: "Lucky" },
+  { name: "Magnolina", class: "Magnolina" },
+  { name: "Minimalist Farmhouse", class: "MinimalistFarmhouse" },
+  { name: "NewYork", class: "NewYork" },
+  { name: "Samantha Calligraphy", class: "SamanthaCalligraphy" },
+  { name: "Samantha Signature", class: "SamanthaSignature" },
+  { name: "Samantha", class: "Samantha" },
+  { name: "SFCompactRounded", class: "SFCompactRounded" },
+  { name: "Stencil Army", class: "Stencil Army" }
+];
+
+let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+function toggleFavorite(name) {
+  if (favorites.includes(name)) {
+    favorites = favorites.filter(f => f !== name);
+  } else {
+    favorites.push(name);
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  updatePreviews();
+}
+
+function copyFont(name, btn) {
+  navigator.clipboard.writeText(name);
+
+  const original = btn.innerText;
+  btn.innerText = "Copied ✓";
+  btn.style.backgroundColor = "#4CAF50";
+
+  setTimeout(() => {
+    btn.innerText = original;
+    btn.style.backgroundColor = "#30625C";
+  }, 1200);
+}
+
+function updatePreviews() {
+  const text = document.getElementById("userText").value || "Your preview text";
+  const search = document.getElementById("searchFont").value.toLowerCase();
+  const showOnlyFavs = document.getElementById("showFavoritesOnly").checked;
+
+  const container = document.getElementById("allFontsPreview");
+  container.innerHTML = "";
+
+  let filtered = [...fonts];
+
+  if (search) {
+    filtered = filtered.filter(f => f.name.toLowerCase().includes(search));
+  }
+
+  if (showOnlyFavs) {
+    filtered = filtered.filter(f => favorites.includes(f.name));
+  }
+
+  filtered.sort((a, b) =>
+    favorites.includes(b.name) - favorites.includes(a.name)
+  );
+
+  filtered.forEach(f => {
+    const isFav = favorites.includes(f.name);
+
+    const block = document.createElement("div");
+    block.classList.add("font-block");
+
+    block.innerHTML = `
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div style="font-family:'${f.class}'; font-size:20px;">
+          ${f.name}
+        </div>
+        <div>
+          <button onclick="copyFont('${f.name}', this)">Copy</button>
+          <button onclick="toggleFavorite('${f.name}')">
+            ${isFav ? "⭐" : "☆"}
+          </button>
+        </div>
+      </div>
+
+      <div style="font-family:'${f.class}'; font-size:32px;">
+        ${text}
+      </div>
+    `;
+
+    container.appendChild(block);
+  });
+}
+
+// Events
+document.getElementById("userText").addEventListener("input", updatePreviews);
+document.getElementById("searchFont").addEventListener("input", updatePreviews);
+document.getElementById("showFavoritesOnly").addEventListener("change", updatePreviews);
+
+// Init
+updatePreviews();
+</script>
+
+</body>
