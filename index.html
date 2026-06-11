@@ -1,12 +1,20 @@
+
+
+const fonts = [
+  { name: "Alegreya SC", class: "AlegreyaSC" },
+  { name: "Atma", class: "Atma" },
+  { name: "SF Compact Rounded", class: "SFCompactRounded" }
+];
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Font Preview Tool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Preview Tool</title>
 
-  <style>
-    /* === FONT DEFINITIONS === */
-    /* Replace the URLs with your actual GitHub raw links */
+<style>
+
 @font-face {
       font-family: 'AlegreyaSC';
       src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/AlegreyaSC-Medium.ttf') format('truetype');
@@ -19,61 +27,84 @@
       font-family: 'SFCompactRounded';
       src: url('https://raw.githubusercontent.com/beaconcarve-svg/Font-Preview/main/Fonts_BC/SFCompactRounded.ttf') format('truetype');
     }
-/* === STYLING === */
+
 
 body {
-  font-family: sans-serif;
-  text-align: center;
-  background: #ffffff;
-  color: #000000;
-  margin: 0;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
-  max-width: 700px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #30625C;
+    margin-bottom: 10px;
 }
 
 .instructions {
-  margin-bottom: 25px;
+    color: #555;
+    margin-bottom: 25px;
 }
 
-.instructions h2 {
-  margin-bottom: 8px;
-  font-size: 28px;
-  color: #30625C;
-}
-
-.instructions p {
-  font-size: 16px;
-  color: #444;
-  line-height: 1.5;
-}
-
-input {
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 18px;
-  padding: 12px;
-  margin-bottom: 30px;
-  border: 1px solid #314946;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #000000;
+#userText {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #314946;
+    border-radius: 6px;
+    margin-bottom: 30px;
 }
 
 .font-block {
-  padding: 20px 10px;
-  border-bottom: 1px solid #dddddd;
+    padding: 20px 0;
+    border-bottom: 1px solid #dddddd;
 }
 
-.font-block:last-child {
-  border-bottom: none;
+.font-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #30625C;
 }
+
+.font-preview {
+    font-size: 32px;
+    line-height: 1.4;
+}
+
 </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Choose Your Font</h1>
+
+    <div class="instructions">
+        Type your text below to preview it in the available fonts.
+    </div>
+
+    <input
+        type="text"
+        id="userText"
+        placeholder="Type your text here"
+    >
+
+    <div id="allFontsPreview"></div>
+
+</div>
 
 <script>
+
 const fonts = [
   { name: "Alegreya SC", class: "AlegreyaSC" },
   { name: "Atma", class: "Atma" },
@@ -81,35 +112,48 @@ const fonts = [
 ];
 
 function updatePreviews() {
-  const text =
-    document.getElementById("userText").value || "Your preview text";
 
-  const container = document.getElementById("allFontsPreview");
-  container.innerHTML = "";
+    const text =
+        document.getElementById("userText").value ||
+        "Your preview text";
 
-  fonts.forEach(f => {
-    const block = document.createElement("div");
-    block.classList.add("font-block");
+    const container =
+        document.getElementById("allFontsPreview");
 
-   block.innerHTML = `
-  <div class="font-name">
-    ${f.name}
-  </div>
+    container.innerHTML = "";
 
-  <div class="font-preview" style="font-family:'${f.class}';">
-    ${text}
-  </div>
-`;
+    fonts.forEach(font => {
 
-    container.appendChild(block);
-  });
+        const block =
+            document.createElement("div");
+
+        block.className = "font-block";
+
+        block.innerHTML = `
+            <div class="font-name">
+                ${font.name}
+            </div>
+
+            <div
+                class="font-preview"
+                style="font-family:'${font.class}';"
+            >
+                ${text}
+            </div>
+        `;
+
+        container.appendChild(block);
+
+    });
 }
 
 document
-  .getElementById("userText")
-  .addEventListener("input", updatePreviews);
+    .getElementById("userText")
+    .addEventListener("input", updatePreviews);
 
 updatePreviews();
+
 </script>
 
 </body>
+</html>
